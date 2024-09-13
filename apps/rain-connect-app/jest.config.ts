@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'rain-portal',
+  displayName: 'rain-connect-app',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/rain-portal',
+  coverageDirectory: '../../coverage/apps/rain-connect-app',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

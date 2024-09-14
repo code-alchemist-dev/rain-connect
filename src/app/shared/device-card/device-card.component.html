@@ -1,0 +1,24 @@
+<div class="card h-100">
+  <img
+    src="https://www.rain.co.za/assets/images/home-page/3-door-landing-page/desktop-banners/consumer-banner.webp"
+    class="card-img-top"
+    alt="Rain Home"
+  />
+  <div class="card-body">
+    <h5 class="card-title">Rain Home <button class="btn btn-sm btn-primary" (click)="editMode = !editMode">edit</button></h5>
+    @if (
+        editMode
+    ) {
+        <form [formGroup]="form" (submit)="onSubmit()">
+            <input type="text" formControlName="name" />
+            <button type="submit">Save</button>
+        </form>
+    }
+    <p class="card-text">Description for Rain Home</p>
+    <p class="card-text">Price: $100</p>
+    <button type="button" class="btn btn-primary me-1">Learn More</button>
+    <button type="button" class="btn btn-secondary">
+      Request a Sales Call
+    </button>
+  </div>
+</div>

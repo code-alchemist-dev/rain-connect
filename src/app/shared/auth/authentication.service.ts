@@ -21,10 +21,10 @@ export class AuthenticationService {
   }
 
   logout() {
-    localStorage.removeItem('token');;
+    localStorage.removeItem(TOKEN);
   }
 
   isLoggedIn() {
-    return !!localStorage.getItem('token');
+    return !!localStorage.getItem(TOKEN);
   }
 }

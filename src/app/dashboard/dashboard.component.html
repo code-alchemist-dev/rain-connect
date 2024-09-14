@@ -1,47 +1,9 @@
 <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="https://www.rain.co.za/assets/images/home-page/3-door-landing-page/desktop-banners/consumer-banner.webp" class="card-img-top" alt="Rain Home" />
-          <div class="card-body">
-            <h5 class="card-title">Rain Home</h5>
-            <p class="card-text">Description for Rain Home</p>
-            <p class="card-text">Price: $100</p>
-            <button type="button" class="btn btn-primary me-1">Learn More</button>
-            <button type="button" class="btn btn-secondary">
-              Request a Sales Call
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="https://www.rain.co.za/assets/images/home-page/3-door-landing-page/desktop-banners/mobile-banner-ten-promo.webp" class="card-img-top" alt="Rain" />
-          <div class="card-body">
-            <h5 class="card-title">Rain</h5>
-            <p class="card-text">Description for Rain</p>
-            <p class="card-text">Price: $200</p>
-            <button type="button" class="btn btn-primary me-1">Learn More</button>
-            <button type="button" class="btn btn-secondary">
-              Request a Sales Call
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <img src="https://www.rain.co.za/assets/images/home-page/3-door-landing-page/desktop-banners/sme-banner.webp" class="card-img-top" alt="Mobile" />
-          <div class="card-body">
-            <h5 class="card-title">Mobile</h5>
-            <p class="card-text">Description for Mobile</p>
-            <p class="card-text">Price: $300</p>
-            <button type="button" class="btn btn-primary me-1">Learn More</button>
-            <button type="button" class="btn btn-secondary">
-              Request a Sales Call
-            </button>
-          </div>
-        </div>
-      </div>
+  <div class="row">
+    @for (item of devices | async; track item.id) {
+    <div class="col-md-4 mb-4">
+      <app-device-card (changeName)="onNameChange($event)"></app-device-card>
     </div>
+    }
   </div>
-  
+</div>

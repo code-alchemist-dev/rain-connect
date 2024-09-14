@@ -2,7 +2,7 @@
   <div class="row">
     @for (item of devices | async; track item.id) {
     <div class="col-md-4 mb-4">
-      <app-device-card (changeName)="onNameChange($event)"></app-device-card>
+      <app-device-card [id]="item.id" [name]="item.name" (changeName)="onNameChange($event)"></app-device-card>
     </div>
     }
   </div>

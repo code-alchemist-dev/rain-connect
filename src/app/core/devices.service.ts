@@ -15,10 +15,11 @@ export class DevicesService {
 
   async getDevices() {
     return await firstValueFrom(
-      this.http.get<Device[]>('/api/device/id', { headers: this.getHeader() })
+      this.http.get<Device[]>('/api/subscriptions', { headers: this.getHeader() })
     );
   }
 
+  // rename  device
   async renameDevice(deviceId: string, name: string) {
     return await firstValueFrom(this.http.post(
       `/api/device/${deviceId}`,
@@ -27,6 +28,7 @@ export class DevicesService {
     ));
   }
 
+  // remove device
   async unSubscribe(deviceId: string) {
     return await firstValueFrom(this.http.post(
       `/api/device/${deviceId}`,

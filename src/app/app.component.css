@@ -1,0 +1,123 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Container styling for cards */
+#product-section {
+  background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-container {
+  position: relative;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0033cc;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+/* Button Styling */
+.btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-outline-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-gradient {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  color: white;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-text,
+  .card-price {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-text,
+  .card-price {
+    font-size: 0.8rem;
+  }
+}

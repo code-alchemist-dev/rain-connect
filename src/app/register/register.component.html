@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+      <div class="card shadow-sm border-0 rounded-lg">
+        <div class="card-header text-center bg-primary text-white py-4 rounded-top">
+          <h2 class="card-title">Create an Account</h2>
+        </div>
+        <div class="card-body p-5">
+          <form (submit)="submit()" [formGroup]="registerForm">
+            <!-- First Name -->
+            <div class="form-group mb-4">
+              <label for="name" class="form-label">First Name</label>
+              <input
+                type="name"
+                class="form-control form-control-lg"
+                id="name"
+                placeholder="Enter your first name"
+                formControlName="name"
+              />
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group mb-4">
+              <label for="surname" class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="surname"
+                placeholder="Enter your last name"
+                formControlName="surname"
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-4">
+              <label for="email" class="form-label">Email Address</label>
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                id="email"
+                placeholder="Enter your email address"
+                formControlName="email"
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="form-group mb-4">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                id="password"
+                placeholder="Enter a strong password"
+                formControlName="password"
+              />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group mb-4">
+              <label for="confirm" class="form-label">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                id="confirm"
+                placeholder="Confirm your password"
+                formControlName="confirm"
+              />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-lg w-100 py-2">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

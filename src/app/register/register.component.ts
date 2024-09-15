@@ -6,44 +6,48 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { loginResponseDto } from './model/login-response-dto';
-import { firstValueFrom } from 'rxjs/internal/firstValueFrom';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../shared/auth/authentication.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css',
 })
-export class LoginComponent {
+export class RegisterComponent {
   formBuilder = inject(FormBuilder);
   http = inject(HttpClient);
   router = inject(Router);
   authService = inject(AuthenticationService);
 
-  loginForm: FormGroup = this.formBuilder.group({
+  registerForm: FormGroup = this.formBuilder.group({
+    name: ['', [Validators.required]],
+    surname: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
+    confirm: ['', [Validators.required, Validators.minLength(6)]],
   });
 
   async submit() {
-    if (this.loginForm.valid) {
+    if (this.registerForm.valid) {
       try {
-        const { email, password } = this.loginForm.value;
-        const { token } = await this.authService.login(email, password);
+        const { name, surname, email, password, confirm } = this.registerForm.value;
 
-        this.router.navigate(['dashboard']);
-        localStorage.setItem('token', token);
+        if (password == confirm) {
+          const response = await this.authService.register(
+            name,
+            surname,
+            email,
+            password
+          );
+
+          if (response !== null) this.router.navigate(['login']);
+        }
       } catch (err: any) {
         console.log(err);
       }
     }
-  }
-
-  register() {
-    this.router.navigate(['register']);
   }
 }

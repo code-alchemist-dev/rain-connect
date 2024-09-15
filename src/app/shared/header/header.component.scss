@@ -1,6 +1,25 @@
-#header-menu {
-  // background-color: #fff;
-  transition: all .4s ease-in;
-  height: 60px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+.navbar-brand svg {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-link {
+    font-size: 14px; 
+  }
+}
+
+/* Style for the navbar */
+.navbar {
+  position: sticky; /* Make the navbar stick to the top */
+  top: 0; /* Position it at the top of the viewport */
+  z-index: 1000; /* Ensure it stays above other content */
+  width: 100%; /* Full width */
+  background-color: #f8f9fa; /* Background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
